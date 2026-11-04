@@ -1,0 +1,1095 @@
+/* Estilos Responsive */
+* {
+    box-sizing: border-box;
+}
+
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.3rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-explorar,
+    .btn-reservar {
+        width: 100%;
+        max-width: 350px;
+        padding: 16px 40px;
+        font-size: 1.2rem;
+    }
+    
+    .destination-image {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+    }
+    
+    .destination-title {
+        font-size: 1.3rem;
+    }
+    
+    .tours-section {
+        background-attachment: scroll;
+    }
+    
+    .tours-section h2 {
+        font-size: 2.8rem;
+    }
+    
+    .tours-section p {
+        font-size: 1.2rem;
+    }
+    
+    #destinos h2 {
+        font-size: 2.8rem;
+    }
+    
+    #destinos p.text-muted {
+        font-size: 1.2rem;
+    }
+    
+    .transport-section h2 {
+        font-size: 2.8rem;
+    }
+    
+    .transport-section p.text-muted {
+        font-size: 1.2rem;
+    }
+    
+    #mapa h2 {
+        font-size: 2.8rem;
+    }
+    
+    #mapa p.text-muted {
+        font-size: 1.2rem;
+    }
+    
+    #contacto h2 {
+        font-size: 2.8rem;
+    }
+    
+    #contacto p.text-muted {
+        font-size: 1.2rem;
+    }
+
+    #comentarios h2,
+    #galeria h2 {
+        font-size: 2.8rem;
+    }
+
+    #galeria p.text-muted {
+        font-size: 1.2rem;
+    }
+
+    .info-hero {
+        padding: 140px 0 55px;
+    }
+
+    .info-hero h1 {
+        font-size: 2.6rem;
+    }
+}
+
+/* Menú hamburguesa (navbar-expand-lg): el panel debe hacer scroll
+   para alcanzar Company y todas sus opciones */
+@media (max-width: 991.98px) {
+    .navbar {
+        max-height: 100vh;
+        max-height: 100dvh;
+        overflow: hidden;
+    }
+
+    .navbar .container {
+        overflow: hidden !important;
+        max-height: 100vh;
+        max-height: 100dvh;
+    }
+
+    .navbar-collapse.show {
+        flex-basis: 100%;
+        max-height: calc(100vh - 130px);
+        max-height: calc(100dvh - 130px);
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .navbar-collapse.show .dropdown-menu {
+        position: static !important;
+        float: none;
+        transform: none !important;
+    }
+
+    .navbar-collapse.show .dropdown-menu.show {
+        max-height: min(50vh, 24rem) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    #companyDropdown + .dropdown-menu.show,
+    .navbar-collapse.show #companyDropdown + .dropdown-menu.show {
+        max-height: min(45vh, 20rem) !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .development-banner {
+        font-size: 0.75rem;
+        padding: 0.5rem 0;
+        width: 100%;
+        max-width: 100vw;
+        left: 0;
+        right: 0;
+    }
+    .development-banner span {
+        display: block;
+        padding: 0 1rem;
+    }
+    .development-banner .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar {
+        top: 0;
+        z-index: 1040;
+        width: 100%;
+        max-width: 100vw;
+        left: 0;
+        right: 0;
+    }
+    
+    /* Contenedor del navbar en móviles - asegurar flexbox correcto */
+    .navbar .container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Navbar brand en móviles - ajustar tamaño y posición */
+    .navbar-brand {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        margin-right: auto !important;
+        max-width: calc(100% - 70px) !important; /* Dejar espacio para el botón */
+    }
+    
+    /* Botón del menú en móviles - posicionamiento correcto */
+    .navbar-toggler {
+        order: 2 !important;
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        position: relative !important;
+        z-index: 1050 !important;
+    }
+    
+    .navbar-nav {
+        margin-right: 0;
+        padding: 1rem 0;
+        background-color: white;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-top: 0.5rem;
+    }
+    
+    .navbar-collapse.show .navbar-nav {
+        overflow: visible;
+        max-height: none;
+        touch-action: auto;
+    }
+    
+    .navbar-collapse {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .navbar-collapse.collapsing {
+        overflow: hidden;
+        transition: height 0.35s ease, opacity 0.35s ease;
+    }
+    
+    .navbar-collapse.show {
+        animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        max-height: calc(100vh - 120px);
+        max-height: calc(100dvh - 120px);
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    }
+    
+    /* Permitir que el dropdown se muestre incluso cuando el navbar está colapsado */
+    .navbar-collapse:not(.show) .nav-item.dropdown {
+        position: relative;
+    }
+    
+    .navbar-collapse:not(.show) .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1050 !important;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 0 0 12px 12px;
+        margin-top: 0;
+    }
+    
+    /* Cuando el navbar está expandido, el dropdown debe ser estático */
+    .navbar-collapse.show .dropdown-menu {
+        position: static !important;
+    }
+    
+    .navbar-collapse.show .navbar-nav {
+        overflow: visible;
+        max-height: none;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .nav-item {
+        margin: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 1rem 1.5rem !important;
+        margin-left: 0 !important;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(42, 157, 143, 0.1);
+        padding-left: 2rem !important;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-item.dropdown {
+        position: static;
+    }
+    
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: rgba(42, 157, 143, 0.05);
+        padding: 0.5rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    
+    /* Reemplaza esta sección en tu CSS (línea aproximada 187-228) */
+.dropdown-menu.show {
+    max-height: calc(100vh - 200px) !important; /* Cambiado de 150px a 200px */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0.5rem 0 5rem 0; /* CLAVE: agregado padding-bottom de 3rem */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    animation: fadeIn 0.3s ease;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(42, 157, 143, 0.5) transparent;
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    /* Asegurar que el scroll funcione correctamente en móviles */
+    touch-action: pan-y !important;
+    overscroll-behavior: contain !important;
+    will-change: scroll-position;
+}
+
+/* También actualiza el último item del dropdown para que tenga margen inferior */
+.dropdown-item:last-child {
+    margin-bottom: 2rem; /* Agregar esta regla nueva */
+    padding-bottom: 1rem !important;
+}
+
+/* Actualiza la animación fadeIn también */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: calc(100vh - 200px); /* Cambiado de 150px a 200px */
+    }
+}
+    
+    /* Scrollbar personalizado para el dropdown en móviles */
+    .dropdown-menu.show::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .dropdown-menu.show::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .dropdown-menu.show::-webkit-scrollbar-thumb {
+        background-color: rgba(42, 157, 143, 0.5);
+        border-radius: 10px;
+    }
+    
+    .dropdown-menu.show::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(42, 157, 143, 0.7);
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: calc(100vh - 150px);
+        }
+    }
+    
+    .dropdown-item {
+        padding: 0.75rem 2.5rem !important;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(0,0,0,0.03);
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .dropdown-item:hover {
+        background-color: rgba(42, 157, 143, 0.15);
+        transform: translateX(10px);
+        padding-left: 3rem !important;
+    }
+    
+    .dropdown-item::before {
+        display: none;
+    }
+    
+    /* Flecha indicadora del menú desplegable en móviles */
+    .dropdown-toggle::after {
+        content: '▼' !important;
+        margin-left: auto;
+        margin-right: 0;
+        transition: transform 0.3s ease;
+        font-size: 0.7em;
+        color: var(--primary-green);
+        display: inline-block !important;
+        position: static !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: auto !important;
+        height: auto !important;
+        background-color: transparent !important;
+    }
+    
+    .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+    }
+    
+    /* Botón de menú (hamburguesa) en dispositivos móviles */
+    /* Tamaño reducido para mejor proporción */
+    .navbar-toggler {
+        border: 2px solid var(--primary-green) !important;
+        border-radius: 8px !important;
+        padding: 0.5rem !important; /* Reducido desde 0.7rem */
+        min-width: 42px !important; /* Reducido desde 50px */
+        min-height: 42px !important; /* Reducido desde 50px */
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        float: none !important;
+    }
+    
+    /* Icono del botón de menú en móviles */
+    .navbar-toggler-icon {
+        width: 28px; /* Reducido desde 35px */
+        height: 3px; /* Reducido desde 4px */
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        height: 3px; /* Reducido desde 4px */
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
+    .navbar-toggler-icon span {
+        background-color: var(--primary-green);
+    }
+    .hero {
+        height: 100vh;
+        background-attachment: scroll;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.1rem;
+    }
+    
+    /* Logo del navbar en dispositivos móviles */
+    /* Tamaño aumentado para mejor visibilidad en pantallas pequeñas */
+    /* Cambio: de 50px a 100px para dar más protagonismo al logo */
+    .navbar-brand img {
+        height: 100px; /* Aumentado desde 50px para mejor visibilidad en móviles */
+    }
+    
+    #brand-text {
+        font-size: 1.1rem;
+    }
+    
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .destination-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .destination-image {
+        height: 200px;
+        min-height: 200px;
+        max-height: 200px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .destination-overlay {
+        padding: 1rem;
+        z-index: 2;
+    }
+    
+    .destination-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .destination-location {
+        font-size: 0.85rem;
+    }
+    
+    .destination-content {
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        gap: 0;
+    }
+    
+    .btn-destination {
+        margin-top: 0.75rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn-destination:first-of-type {
+        margin-top: 0;
+    }
+    
+    .btn-mas-info {
+        margin-bottom: 0;
+        margin-top: auto;
+    }
+    
+    .btn-mas-info + .btn-destination {
+        margin-top: 0.75rem;
+    }
+    
+    .destination-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .tours-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .tours-section p {
+        font-size: 1.1rem;
+    }
+    
+    #destinos {
+        padding-bottom: 2rem !important; /* Agregado para dar espacio al contenido de las tarjetas */
+        overflow: visible !important; /* Eliminar scroll de la sección de destinos en móviles */
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    
+    #destinos .container {
+        overflow: visible !important; /* Eliminar scroll del contenedor en móviles */
+    }
+    
+    #destinos h2 {
+        font-size: 2.2rem;
+    }
+    
+    #destinos p.text-muted {
+        font-size: 1.1rem;
+    }
+    
+    #destinos .row {
+        margin-bottom: 2rem;
+    }
+    
+    #destinos .row > [class*="col-"]:last-child {
+        margin-bottom: 2rem;
+    }
+    
+    .transport-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .transport-section p.text-muted {
+        font-size: 1.1rem;
+    }
+    
+    #mapa h2 {
+        font-size: 2.2rem;
+    }
+    
+    #mapa p.text-muted {
+        font-size: 1.1rem;
+    }
+    
+    #contacto h2 {
+        font-size: 2.2rem;
+    }
+    
+    #contacto p.text-muted {
+        font-size: 1.1rem;
+    }
+
+    #comentarios h2,
+    #galeria h2 {
+        font-size: 2.2rem;
+    }
+
+    #galeria p.text-muted {
+        font-size: 1.1rem;
+    }
+
+    .info-hero {
+        padding: 130px 0 45px;
+    }
+
+    .info-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .info-hero p {
+        font-size: 1.05rem;
+    }
+    
+    .destination-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .destination-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .destination-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .flip-card-front.destination-card {
+        overflow: hidden;
+    }
+    
+    .transport-section {
+        padding: 50px 0;
+    }
+    
+    .transport-section .col-md-5 {
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0 !important;
+        min-height: auto;
+    }
+    
+    .transport-section .list-unstyled {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .transport-section .list-unstyled li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.15rem;
+    }
+    
+    .transport-section .list-unstyled i {
+        font-size: 1.3rem;
+    }
+    
+    .transport-section .btn-destination.btn-mas-info {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        text-align: center;
+    }
+    
+    .tripadvisor-float {
+        bottom: 20px;
+        left: 12px;
+        max-width: 90px;
+        z-index: 90;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 16px;
+        font-size: 24px;
+        max-width: calc(100vw - 40px);
+        z-index: 110;
+    }
+
+    .whatsapp-float-label {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: calc(100% + 10px);
+        font-size: 0.65rem;
+        padding: 0.4rem 0.65rem;
+        transform: translateX(-50%);
+        animation: whatsapp-label-attention-mobile 3.6s ease-in-out infinite;
+    }
+
+    .whatsapp-float-label::after {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -6px;
+        transform: translateX(-50%);
+        border-width: 7px 6px 0 6px;
+        border-color: #e76f51 transparent transparent transparent;
+    }
+
+    .whatsapp-float:hover .whatsapp-float-label {
+        transform: translateX(-50%);
+    }
+
+    .whatsapp-float:hover .whatsapp-float-label::after {
+        border-color: #d65a3c transparent transparent transparent;
+    }
+
+    .whatsapp-float::before {
+        width: 50px;
+        height: 50px;
+    }
+
+    @keyframes whatsapp-label-attention-mobile {
+        0%, 70%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        78% {
+            transform: translateX(-50%) translateY(-4px);
+        }
+        86% {
+            transform: translateX(-50%) translateY(2px);
+        }
+        92% {
+            transform: translateX(-50%) translateY(-2px);
+        }
+    }
+    
+    section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    
+    .tours-section {
+        min-height: auto;
+        overflow: hidden;
+    }
+    
+    .destination-tab-content {
+        overflow-y: auto;
+        max-height: calc(100% - 180px);
+        padding-bottom: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .flip-card-back {
+        overflow-y: visible;
+    }
+    
+    .destination-card-back {
+        overflow-y: visible !important;
+        height: auto;
+        min-height: 100%;
+    }
+    
+    .btn-back {
+        margin-top: 1rem;
+        position: relative;
+        z-index: 10;
+    }
+    
+    body, html {
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+    .hero {
+        overflow: hidden;
+    }
+    
+    .tours-section::before {
+        background-attachment: scroll;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .carousel {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .carousel-item img {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .scroll-indicator {
+        font-size: 1.5rem;
+        bottom: 20px;
+    }
+    
+    .footer-logo {
+        height: 200px;
+        max-width: 320px;
+    }
+    
+    footer .col-md-4 {
+        text-align: center !important;
+    }
+    footer .col-md-4 p.text-white-50 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+        width: 100%;
+    }
+    
+    footer h5 {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    
+    footer .row > div:first-child h5 {
+        margin-top: 0;
+    }
+    
+    footer .footer-links {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer .footer-links li {
+        text-align: center;
+    }
+    
+    footer .social-icons {
+        justify-content: center;
+    }
+
+    .ta-reviews-section .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .ta-tripadvisor-widget-wrap {
+        padding: 0;
+        overflow-x: hidden;
+        justify-content: center;
+    }
+
+    .ta-tripadvisor-widget-wrap .TA_selfserveprop,
+    .ta-tripadvisor-widget-wrap [id^="TA_selfserveprop"] {
+        min-width: 0 !important;
+        width: auto !important;
+        max-width: calc(100vw - 2rem) !important;
+    }
+
+    .ta-tripadvisor-widget-wrap iframe {
+        width: auto !important;
+        max-width: calc(100vw - 2rem) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .ta-reviews-carousel-wrap {
+        gap: 0.35rem;
+    }
+
+    .ta-reviews-nav {
+        width: 38px;
+        height: 38px;
+    }
+
+    .ta-review-slide {
+        padding: 0 0.35rem;
+    }
+
+    .ta-review-card {
+        max-width: min(340px, calc(100vw - 7rem));
+    }
+
+    .gallery-section .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .gallery-carousel-wrap {
+        position: relative;
+        gap: 0;
+    }
+
+    .gallery-viewport {
+        width: 100%;
+    }
+
+    .gallery-slide {
+        height: min(72vh, 480px);
+        padding: 0.5rem 0.35rem;
+    }
+
+    .gallery-slide--pair {
+        padding: 0.5rem 0.5rem;
+        gap: 0.65rem;
+    }
+
+    .gallery-frame {
+        padding: 0.45rem;
+        border-radius: 12px;
+    }
+
+    .gallery-carousel-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        font-size: 0.85rem;
+        z-index: 3;
+    }
+
+    .gallery-prev {
+        left: 8px;
+    }
+
+    .gallery-next {
+        right: 8px;
+    }
+
+    .gallery-dots {
+        padding: 0.75rem 0.25rem 0.15rem;
+        gap: 0.35rem;
+    }
+
+    .gallery-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    footer .footer-contact {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer     .footer-contact li {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-marketing-images {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-marketing-img {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero .lead {
+        font-size: 1rem;
+    }
+    
+    .btn-explorar,
+    .btn-reservar {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+    }
+    
+    .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+    }
+    
+    #brand-text {
+        font-size: 0.95rem;
+    }
+    
+    .footer-logo {
+        height: 180px;
+        max-width: 280px;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 8px;
+    }
+    
+    .footer-marketing-images {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .destination-image {
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
+    }
+    
+    .destination-overlay {
+        padding: 0.75rem;
+    }
+    
+    .destination-title {
+        font-size: 1.1rem;
+    }
+    
+    .destination-location {
+        font-size: 0.8rem;
+    }
+    
+    .destination-content {
+        padding: 0.75rem;
+    }
+}
+
