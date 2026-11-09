@@ -1,4 +1,5 @@
-/* Estilos Responsive */
+/* Estilos Responsive - Ocean Breeze Costa Rica */
+
 * {
     box-sizing: border-box;
 }
@@ -103,9 +104,8 @@ img, video, iframe, embed, object {
     }
 }
 
-/* Menú hamburguesa (navbar-expand-lg): el panel debe hacer scroll
-   para alcanzar Company y todas sus opciones */
-@media (max-width: 991.98px) {
+/* Menú hamburguesa (navbar-expand-lg): el panel hace scroll para alcanzar desplegables */
+@media (max-width: 1399.98px) {
     .navbar {
         max-height: 100vh;
         max-height: 100dvh;
@@ -113,13 +113,31 @@ img, video, iframe, embed, object {
     }
 
     .navbar .container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
         overflow: hidden !important;
         max-height: 100vh;
         max-height: 100dvh;
     }
 
-    .navbar-collapse.show {
+    .navbar-brand {
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .navbar-toggler {
+        flex-shrink: 0;
+    }
+
+    .navbar-collapse {
         flex-basis: 100%;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .navbar-collapse.show {
         max-height: calc(100vh - 130px);
         max-height: calc(100dvh - 130px);
         overflow-x: hidden !important;
@@ -155,7 +173,10 @@ img, video, iframe, embed, object {
     }
 }
 
-/* Móviles */
+
+/* ==========================================
+   Dispositivos Móviles (<= 768px)
+   ========================================== */
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
@@ -195,7 +216,7 @@ img, video, iframe, embed, object {
         right: 0;
     }
     
-    /* Contenedor del navbar en móviles - asegurar flexbox correcto */
+    /* Contenedor del navbar en móviles */
     .navbar .container {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -205,16 +226,16 @@ img, video, iframe, embed, object {
         padding-right: 15px !important;
     }
     
-    /* Navbar brand en móviles - ajustar tamaño y posición */
+    /* Navbar brand en móviles */
     .navbar-brand {
         display: flex !important;
         align-items: center !important;
-        flex: 0 0 auto !important;
+        flex: 0 1 auto !important;
         margin-right: auto !important;
-        max-width: calc(100% - 70px) !important; /* Dejar espacio para el botón */
+        max-width: calc(100% - 70px) !important;
     }
     
-    /* Botón del menú en móviles - posicionamiento correcto */
+    /* Botón del menú en móviles */
     .navbar-toggler {
         order: 2 !important;
         flex: 0 0 auto !important;
@@ -260,7 +281,6 @@ img, video, iframe, embed, object {
         padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
     }
     
-    /* Permitir que el dropdown se muestre incluso cuando el navbar está colapsado */
     .navbar-collapse:not(.show) .nav-item.dropdown {
         position: relative;
     }
@@ -278,7 +298,6 @@ img, video, iframe, embed, object {
         margin-top: 0;
     }
     
-    /* Cuando el navbar está expandido, el dropdown debe ser estático */
     .navbar-collapse.show .dropdown-menu {
         position: static !important;
     }
@@ -350,47 +369,42 @@ img, video, iframe, embed, object {
         transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
     }
     
-    /* Reemplaza esta sección en tu CSS (línea aproximada 187-228) */
-.dropdown-menu.show {
-    max-height: calc(100vh - 200px) !important; /* Cambiado de 150px a 200px */
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    padding: 0.5rem 0 5rem 0; /* CLAVE: agregado padding-bottom de 3rem */
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    animation: fadeIn 0.3s ease;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(42, 157, 143, 0.5) transparent;
-    display: block !important;
-    min-height: 0 !important;
-    height: auto !important;
-    /* Asegurar que el scroll funcione correctamente en móviles */
-    touch-action: pan-y !important;
-    overscroll-behavior: contain !important;
-    will-change: scroll-position;
-}
-
-/* También actualiza el último item del dropdown para que tenga margen inferior */
-.dropdown-item:last-child {
-    margin-bottom: 2rem; /* Agregar esta regla nueva */
-    padding-bottom: 1rem !important;
-}
-
-/* Actualiza la animación fadeIn también */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        max-height: 0;
+    .dropdown-menu.show {
+        max-height: calc(100vh - 200px) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        padding: 0.5rem 0 5rem 0;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        animation: fadeIn 0.3s ease;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(42, 157, 143, 0.5) transparent;
+        display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
+        touch-action: pan-y !important;
+        overscroll-behavior: contain !important;
+        will-change: scroll-position;
     }
-    to {
-        opacity: 1;
-        max-height: calc(100vh - 200px); /* Cambiado de 150px a 200px */
+
+    .dropdown-item:last-child {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem !important;
     }
-}
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: calc(100vh - 200px);
+        }
+    }
     
-    /* Scrollbar personalizado para el dropdown en móviles */
     .dropdown-menu.show::-webkit-scrollbar {
         width: 6px;
     }
@@ -406,17 +420,6 @@ img, video, iframe, embed, object {
     
     .dropdown-menu.show::-webkit-scrollbar-thumb:hover {
         background-color: rgba(42, 157, 143, 0.7);
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            max-height: 0;
-        }
-        to {
-            opacity: 1;
-            max-height: calc(100vh - 150px);
-        }
     }
     
     .dropdown-item {
@@ -437,7 +440,6 @@ img, video, iframe, embed, object {
         display: none;
     }
     
-    /* Flecha indicadora del menú desplegable en móviles */
     .dropdown-toggle::after {
         content: '▼' !important;
         margin-left: auto;
@@ -458,14 +460,12 @@ img, video, iframe, embed, object {
         transform: rotate(180deg);
     }
     
-    /* Botón de menú (hamburguesa) en dispositivos móviles */
-    /* Tamaño reducido para mejor proporción */
     .navbar-toggler {
         border: 2px solid var(--primary-green) !important;
         border-radius: 8px !important;
-        padding: 0.5rem !important; /* Reducido desde 0.7rem */
-        min-width: 42px !important; /* Reducido desde 50px */
-        min-height: 42px !important; /* Reducido desde 50px */
+        padding: 0.5rem !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
         position: relative !important;
         top: auto !important;
         right: auto !important;
@@ -475,15 +475,14 @@ img, video, iframe, embed, object {
         float: none !important;
     }
     
-    /* Icono del botón de menú en móviles */
     .navbar-toggler-icon {
-        width: 28px; /* Reducido desde 35px */
-        height: 3px; /* Reducido desde 4px */
+        width: 28px;
+        height: 3px;
     }
     
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after {
-        height: 3px; /* Reducido desde 4px */
+        height: 3px;
     }
     
     .navbar-toggler-icon::before,
@@ -491,6 +490,7 @@ img, video, iframe, embed, object {
     .navbar-toggler-icon span {
         background-color: var(--primary-green);
     }
+
     .hero {
         height: 100vh;
         background-attachment: scroll;
@@ -504,15 +504,12 @@ img, video, iframe, embed, object {
         font-size: 1.1rem;
     }
     
-    /* Logo del navbar en dispositivos móviles */
-    /* Tamaño aumentado para mejor visibilidad en pantallas pequeñas */
-    /* Cambio: de 50px a 100px para dar más protagonismo al logo */
     .navbar-brand img {
-        height: 100px; /* Aumentado desde 50px para mejor visibilidad en móviles */
+        height: 80px;
     }
     
     #brand-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .service-card {
@@ -521,6 +518,9 @@ img, video, iframe, embed, object {
     
     .destination-card {
         margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
     
     .destination-image {
@@ -572,12 +572,6 @@ img, video, iframe, embed, object {
         margin-top: 0.75rem;
     }
     
-    .destination-card {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
     .tours-section h2 {
         font-size: 2.2rem;
     }
@@ -587,14 +581,14 @@ img, video, iframe, embed, object {
     }
     
     #destinos {
-        padding-bottom: 2rem !important; /* Agregado para dar espacio al contenido de las tarjetas */
-        overflow: visible !important; /* Eliminar scroll de la sección de destinos en móviles */
+        padding-bottom: 2rem !important;
+        overflow: visible !important;
         overflow-x: hidden;
         overflow-y: visible;
     }
     
     #destinos .container {
-        overflow: visible !important; /* Eliminar scroll del contenedor en móviles */
+        overflow: visible !important;
     }
     
     #destinos h2 {
@@ -1013,7 +1007,7 @@ img, video, iframe, embed, object {
         align-items: center;
     }
     
-    footer     .footer-contact li {
+    footer .footer-contact li {
         text-align: center;
         display: flex;
         align-items: center;

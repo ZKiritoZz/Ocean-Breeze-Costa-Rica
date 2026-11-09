@@ -941,3 +941,42 @@ const translations = {
     }
 };
 
+//Link WhatsApp mensage.
+
+function updateWhatsAppButton() {
+    const isSpanish = document.documentElement.lang === 'es' ||  window.location.pathname.includes('/es/') ||  document.documentElement.getAttribute('data-lang') === 'es';
+    
+    const whatsAppButton = document.querySelector('.whatsapp-float');
+    if (!whatsAppButton) return;
+
+    const phoneNumber = "50672739813";
+    let message = "";
+    let utmMedium = "";
+
+    if (isSpanish) {
+        message = "¡Hola! Me gustaría consultar disponibilidad para un tour o servicio con Ocean Breeze.";
+        utmMedium = "whatsapp_es";
+    } else {
+        // Por defecto en inglés (coincidiendo con el mercado principal)
+        message = "Hello! I would like to check availability for a tour or service with Ocean Breeze.";
+        utmMedium = "whatsapp_en";
+    }
+
+    const encodedMessage = encodeURIComponent(message);
+    
+    whatsAppButton.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}&utm_source=website&utm_medium=${utmMedium}&utm_campaign=floating_button`;
+}
+
+document.addEventListener('DOMContentLoaded', updateWhatsAppButton);
+
+window.addEventListener('popstate', updateWhatsAppButton);
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'lang' || mutation.attributeName === 'data-lang') {
+            updateWhatsAppButton();
+        }
+    });
+});
+
+observer.observe(document.documentElement, { attributes: true });
