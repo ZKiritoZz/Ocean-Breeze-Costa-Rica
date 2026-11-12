@@ -1336,6 +1336,7 @@ body {
 .transport-section {
     background-color: var(--light-bg);
     padding: 80px 0;
+    margin-top: clamp(8rem, 13vh, 12.5rem);
 }
 .transport-section h2 {
     font-size: 3.5rem;
@@ -1627,6 +1628,7 @@ body {
 #contacto {
     padding-bottom: 100px;
     overflow: visible;
+    margin-top: clamp(8rem, 13vh, 12.5rem);
 }
 
 #contacto h2 {
@@ -2318,7 +2320,7 @@ footer .col-md-4 p.text-white-50 {
 /* Institutional pages for esencial Costa Rica */
 .info-hero {
     padding: 160px 0 70px;
-    background: linear-gradient(rgba(0, 95, 115, 0.82), rgba(38, 70, 83, 0.88)), url('../images/Gemini_Generated_Image_md6ectmd6ectmd6e.webp') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 95, 115, 0.82), rgba(38, 70, 83, 0.88)), url('../images/Fondo-Principal.webp') center/cover no-repeat;
     color: #fff;
     text-align: center;
 }

@@ -28,32 +28,67 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="terms">
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+
+    <nav class="navbar navbar-expand-xxl fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="images/Logo Ocean Breeze Editable.png" alt="Ocean Breeze Costa Rica Logo"><span class="d-inline ms-2 text-dark fw-bold" id="brand-text">Ocean Breeze Costa Rica</span></a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Logo Ocean Breeze Editable.webp" alt="Ocean Breeze Costa Rica Logo"> 
+                <span class="d-inline ms-2 text-dark fw-bold" id="brand-text">Ocean Breeze Costa Rica</span>
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav.home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#tours" data-translate="nav.tours">Tours</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#destinos" data-translate="nav.destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#transporte" data-translate="nav.transport">Transport</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="companyDropdown" role="button" data-bs-toggle="dropdown" data-translate="nav.company">Company</a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="toursDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="true" data-bs-display="static" aria-expanded="false" data-translate="nav.tours">
+                            Tours
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toursDropdown" data-bs-popper="static">
+                            <li><a class="dropdown-item" href="index.html#playa-conchal" data-tour="playa-conchal" data-translate="tours.playa-conchal.name">White Beaches Tour</a></li>
+                            <li><a class="dropdown-item" href="index.html#volcan-arenal" data-tour="volcan-arenal" data-translate="tours.volcan-arenal.name">Arenal Volcano and La Fortuna Waterfall</a></li>
+                            <li><a class="dropdown-item" href="index.html#monteverde" data-tour="monteverde" data-translate="tours.monteverde.name">Monteverde Cloud Forest</a></li>
+                            <li><a class="dropdown-item" href="index.html#borinquen-mountain" data-tour="borinquen-mountain" data-translate="tours.borinquen-mountain.name">Borinquen Mountain Resort & Spa</a></li>
+                            <li><a class="dropdown-item" href="index.html#la-leona-waterfall" data-tour="la-leona-waterfall" data-translate="tours.la-leona-waterfall.name">La Leona Waterfall</a></li>
+                            <li><a class="dropdown-item" href="index.html#rio-celeste" data-tour="rio-celeste" data-translate="tours.rio-celeste.name">Río Celeste</a></li>
+                            <li><a class="dropdown-item" href="index.html#catamaran-sunset" data-tour="catamaran-sunset" data-translate="tours.catamaran-sunset.name">Catamaran Sailing Sunset Tour</a></li>
+                            <li><a class="dropdown-item" href="index.html#miravalles" data-tour="miravalles" data-translate="tours.miravalles.name">Miravalles Volcano and Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="index.html#rincon-vieja" data-tour="rincon-vieja" data-translate="tours.rincon-vieja.name">Rincón de La Vieja Hiking Tour</a></li>
+                            <li><a class="dropdown-item" href="index.html#palo-verde" data-tour="palo-verde" data-translate="tours.palo-verde.name">Palo Verde Jungle and Cultural</a></li>
+                            <li><a class="dropdown-item" href="index.html#hacienda-guachipelin" data-tour="hacienda-guachipelin" data-translate="tours.hacienda-guachipelin.name">Hacienda Guachipelin Tubing and Canopy Tour</a></li>
+                            <li><a class="dropdown-item" href="index.html#sport-fishing" data-tour="sport-fishing" data-translate="tours.sport-fishing.name">Sport Fishing / Full Day</a></li>
+                            <li><a class="dropdown-item" href="index.html#colorado-river-rafting" data-tour="colorado-river-rafting" data-translate="tours.colorado-river-rafting.name">Colorado River Rafting</a></li>
+                            <li><a class="dropdown-item" href="index.html#atvs" data-tour="atvs" data-translate="tours.atvs.name">ATVs</a></li>
+                            <li><a class="dropdown-item" href="index.html#llanos-cortez-sloth" data-tour="llanos-cortez-sloth" data-translate="tours.llanos-cortez-sloth.name">Llanos de Cortez, sloth and coffee tour</a></li>
+                            <li><a class="dropdown-item" href="index.html#paddleboard-kayak" data-tour="paddleboard-kayak" data-translate="tours.paddleboard-kayak.name">Paddleboard and Kayak Tour</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#destinos" data-translate="nav.destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="transporte.html" data-translate="nav.transport">Transport</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="true" data-bs-display="static" aria-expanded="false" data-translate="nav.company">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="companyDropdown" data-bs-popper="static">
                             <li><a class="dropdown-item" href="nosotros.html" data-translate="nav.about">About Us</a></li>
                             <li><a class="dropdown-item" href="sostenibilidad.html" data-translate="nav.sustainability">Sustainability</a></li>
                             <li><a class="dropdown-item" href="legalidad.html" data-translate="nav.legal">Legal</a></li>
-                            <li><a class="dropdown-item active" href="terminos.html" data-translate="nav.terms">Terms</a></li>
+                            <li><a class="dropdown-item" href="terminos.html" data-translate="nav.terms">Terms</a></li>
                             <li><a class="dropdown-item" href="faq.html" data-translate="nav.faq">FAQ</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contacto" data-translate="nav.contact">Contact</a></li>
-                    <li class="nav-item"><button class="btn btn-outline-primary ms-2 language-toggle" id="languageToggle" type="button"><i class="fas fa-globe me-1"></i><span id="currentLang">EN</span></button></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html " data-translate="nav.contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary ms-2 language-toggle" id="languageToggle" type="button" aria-label="Change language">
+                            <i class="fas fa-globe me-1"></i><span id="currentLang">EN</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <section class="info-hero">
         <div class="container">
