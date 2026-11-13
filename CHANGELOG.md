@@ -5,6 +5,29 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+
+## [Sin versionar] - 2026-11-13
+
+### Agregado
+- Página independiente de transporte privado (`transporte.html`).
+- Página independiente de contacto (`Contacto.html`).
+- Páginas independientes para información institucional, legalidad, términos, preguntas frecuentes y sostenibilidad.
+- URLs de las nuevas páginas agregadas al sitemap.
+- Referencias a las páginas de transporte y contacto en `llm.txt` y `llms.txt`.
+
+### Modificado
+- Metadatos canonical y Open Graph URL actualizados para las páginas de transporte y contacto.
+- Metadatos Open Graph y Twitter Card actualizados para utilizar una imagen existente del sitio (`images/Fondo-Principal.webp`).
+- Encabezados principales H1 ajustados en las páginas de contacto y transporte.
+- Selectores CSS de transporte actualizados para conservar el diseño responsive.
+- Sitemap actualizado para incluir las ocho páginas HTML del sitio.
+- README actualizado para documentar la estructura y las páginas del proyecto.
+- Archivo robots.txt revisado; se conserva su configuración porque la referencia al sitemap es correcta.
+- Conversión de todas las imágenes del sitio al formato WebP para optimizar el peso, mejorar los tiempos de carga y el rendimiento de las páginas.
+- Mensajes predeterminados de WhatsApp adaptados automáticamente al idioma seleccionado en el sitio (español o inglés).
+- Rediseño y optimización del diseño responsive del sitio web para mejorar su adaptación a dispositivos móviles, tablets y computadoras.
+
+
 ## [Sin versionar] - 2026-01-03
 
 ### Agregado
