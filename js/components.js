@@ -380,43 +380,58 @@ function initToursDropdown() {
         });
     }
     
+    
     tourLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
+
             const tourId = this.getAttribute('data-tour');
             const tourCard = document.getElementById(`tour-${tourId}`);
-            
-            if (tourCard) {
-                // Cerrar el menú desplegable si está abierto (Bootstrap 5)
-                const dropdownElement = this.closest('.dropdown');
-                const dropdownToggle = dropdownElement ? dropdownElement.querySelector('.dropdown-toggle') : null;
-                if (dropdownToggle) {
-                    const dropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
-                    if (dropdown) {
-                        dropdown.hide();
-                    }
-                }
-                
-                // Calcular la posición de la tarjeta
-                const navbar = document.getElementById('navbar');
-                const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                const cardPosition = tourCard.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = cardPosition - navbarHeight - 20; // 20px de espacio adicional
-                
-                // Scroll suave a la tarjeta
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Opcional: resaltar la tarjeta brevemente
-                tourCard.style.transition = 'box-shadow 0.3s ease';
-                tourCard.style.boxShadow = '0 0 20px rgba(74, 144, 226, 0.6)';
-                setTimeout(() => {
-                    tourCard.style.boxShadow = '';
-                }, 2000);
+
+            // Si el tour no existe en esta página,
+            // permitir la navegación normal del enlace.
+            if (!tourCard) {
+                return;
             }
+
+            // Evitar la navegación solo si estamos
+            // en la página que contiene el tour.
+            e.preventDefault();
+
+            // Cerrar el menú desplegable
+            const dropdownElement = this.closest('.dropdown');
+            const dropdownToggle = dropdownElement
+                ? dropdownElement.querySelector('.dropdown-toggle')
+                : null;
+
+            if (dropdownToggle && typeof bootstrap !== 'undefined') {
+                const dropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                if (dropdown) {
+                    dropdown.hide();
+                }
+            }
+
+            // Calcular la posición de la tarjeta
+            const navbar = document.getElementById('navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 80;
+
+            const cardPosition =
+                tourCard.getBoundingClientRect().top + window.pageYOffset;
+
+            const offsetPosition = cardPosition - navbarHeight - 20;
+
+            // Desplazamiento suave
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            // Resaltar la tarjeta
+            tourCard.style.transition = 'box-shadow 0.3s ease';
+            tourCard.style.boxShadow = '0 0 20px rgba(74, 144, 226, 0.6)';
+
+            setTimeout(() => {
+                tourCard.style.boxShadow = '';
+            }, 2000);
         });
     });
 }
